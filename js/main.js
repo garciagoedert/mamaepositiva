@@ -2,15 +2,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu
     const initMobileMenu = () => {
         const mobileMenu = document.querySelector('.mobile-menu');
+        const navWrapper = document.querySelector('.nav-wrapper');
         const navLinks = document.querySelector('.nav-links');
         
-        if (mobileMenu && navLinks) {
-            mobileMenu.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                const spans = mobileMenu.querySelectorAll('span');
+        if (mobileMenu && navWrapper) {
+            mobileMenu.addEventListener('click', (e) => {
+                e.stopPropagation();
+                navWrapper.classList.toggle('active');
                 
+                const spans = mobileMenu.querySelectorAll('span');
                 spans.forEach((span, index) => {
-                    if (navLinks.classList.contains('active')) {
+                    if (navWrapper.classList.contains('active')) {
                         if (index === 0) span.style.transform = 'rotate(45deg) translate(5px, 5px)';
                         if (index === 1) span.style.opacity = '0';
                         if (index === 2) span.style.transform = 'rotate(-45deg) translate(7px, -7px)';
@@ -23,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Close mobile menu when clicking outside
             document.addEventListener('click', (e) => {
-                if (!mobileMenu.contains(e.target) && !navLinks.contains(e.target)) {
-                    navLinks.classList.remove('active');
+                if (!mobileMenu.contains(e.target) && !navWrapper.contains(e.target) && navWrapper.classList.contains('active')) {
+                    navWrapper.classList.remove('active');
                     mobileMenu.querySelectorAll('span').forEach(span => {
                         span.style.transform = 'none';
                         span.style.opacity = '1';
@@ -33,15 +35,17 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             // Close mobile menu when clicking on a link
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    mobileMenu.querySelectorAll('span').forEach(span => {
-                        span.style.transform = 'none';
-                        span.style.opacity = '1';
+            if (navLinks) {
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navWrapper.classList.remove('active');
+                        mobileMenu.querySelectorAll('span').forEach(span => {
+                            span.style.transform = 'none';
+                            span.style.opacity = '1';
+                        });
                     });
                 });
-            });
+            }
         }
     };
 
@@ -123,35 +127,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Header scroll effect
-    const initHeaderScroll = () => {
-        const header = document.querySelector('.header');
-        if (header) {
-            let lastScroll = 0;
-            window.addEventListener('scroll', () => {
-                const currentScroll = window.pageYOffset;
-                
-                if (currentScroll <= 0) {
-                    header.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
-                    return;
-                }
-                
-                if (currentScroll > lastScroll) {
-                    header.style.transform = 'translateY(-100%)';
-                } else {
-                    header.style.transform = 'translateY(0)';
-                    header.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
-                }
-                
-                lastScroll = currentScroll;
-            });
-        }
-    };
-
     // Initialize all components
     initMobileMenu();
     initContactForm();
     initPhoneMask();
     initSmoothScroll();
-    initHeaderScroll();
 });

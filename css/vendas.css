@@ -1,0 +1,288 @@
+/* Estilos específicos para a página de vendas */
+
+/* Header modificado */
+.back-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero-vendas {
+    padding: calc(var(--spacing-xl) * 2) 0;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    text-align: center;
+    margin-top: 60px;
+}
+
+.hero-vendas h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-color);
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-xl);
+    color: var(--text-color);
+}
+
+.cta-primary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.cta-secondary {
+    font-weight: 600;
+    color: var(--text-color);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Benefícios Section */
+.beneficios {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--background-light);
+}
+
+.beneficios-grid {
+    display: grid;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.beneficio-card {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.beneficio-card:hover {
+    transform: translateY(-5px);
+}
+
+.beneficio-card img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Resultados Section */
+.resultados {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--secondary-color);
+}
+
+.resultados-grid {
+    display: grid;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.resultado-card {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.numero {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+    font-family: var(--font-heading);
+}
+
+/* Ofertas Section */
+.ofertas {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--background-light);
+}
+
+.ofertas-grid {
+    display: grid;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.oferta-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: var(--spacing-lg);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.oferta-card.destaque {
+    background-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.oferta-card:hover {
+    transform: translateY(-5px);
+}
+
+.oferta-card.destaque:hover {
+    transform: scale(1.05) translateY(-5px);
+}
+
+.oferta-header {
+    margin-bottom: var(--spacing-lg);
+}
+
+.preco {
+    margin: var(--spacing-md) 0;
+}
+
+.valor {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    font-family: var(--font-heading);
+}
+
+.periodo {
+    font-size: 1rem;
+    color: var(--text-light);
+}
+
+.beneficios-lista {
+    list-style: none;
+    margin: var(--spacing-lg) 0;
+    text-align: left;
+}
+
+.beneficios-lista li {
+    margin-bottom: var(--spacing-sm);
+    padding-left: var(--spacing-md);
+    position: relative;
+}
+
+.beneficios-lista li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/* Garantia Section */
+.garantia {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--accent-color);
+}
+
+.garantia-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.garantia-content img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Inscrição Section */
+.inscricao {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--background-light);
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.inscricao-form {
+    background-color: white;
+    padding: var(--spacing-xl);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.inscricao-form select {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: var(--font-body);
+    background-color: white;
+}
+
+/* FAQ Section */
+.faq {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--secondary-color);
+}
+
+.faq-grid {
+    display: grid;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.faq-item {
+    background-color: white;
+    padding: var(--spacing-lg);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item h3 {
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.2rem;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .hero-vendas h1 {
+        font-size: 3rem;
+    }
+
+    .beneficios-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .resultados-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .ofertas-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .faq-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-vendas h1 {
+        font-size: 3.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+    }
+}

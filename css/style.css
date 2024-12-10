@@ -141,16 +141,21 @@ h2 {
 
 /* Hero Section */
 .hero {
-    padding: calc(var(--spacing-xl) * 2) 0;
+    height: 100vh;
     background: linear-gradient(135deg, #E8D6D6, #F5EBEB);
-    text-align: center;
-    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+}
+
+.hero .container {
+    width: 100%;
+    padding: 0 var(--spacing-xl);
 }
 
 .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-md);
+    max-width: 600px;
+    text-align: left;
 }
 
 .hero h2 {
@@ -158,6 +163,7 @@ h2 {
     margin-bottom: var(--spacing-lg);
     color: var(--text-color);
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    text-align: left;
 }
 
 .hero p {

@@ -1,55 +1,51 @@
 /* Estilos específicos para a página de vendas */
 
-/* Header modificado */
-.back-link {
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.back-link:hover {
-    color: var(--primary-color);
-}
-
 /* Hero Section */
 .hero-vendas {
-    padding: calc(var(--spacing-xl) * 2) 0;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    padding: var(--spacing-xl) 0;
+    margin-top: 80px; /* Ajuste para o header fixo */
     text-align: center;
-    margin-top: 60px;
 }
 
 .hero-vendas h1 {
-    font-size: 2.5rem;
-    margin-bottom: var(--spacing-md);
+    font-size: 3.5rem; /* Mesmo tamanho de index.html */
+    margin-bottom: var(--spacing-lg);
     color: var(--text-color);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    text-align: left;
+}
+.container {
+    width: 100%;
+    padding: 0 var(--spacing-md);
+    max-width: 600px;
 }
 
 .subtitle {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     margin-bottom: var(--spacing-xl);
     color: var(--text-color);
+    font-weight: 500;
+    text-align: left;
 }
 
 .cta-primary {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* Alinhar à esquerda */
     gap: var(--spacing-md);
 }
 
 .cta-secondary {
     font-weight: 600;
     color: var(--text-color);
-    animation: pulse 2s infinite;
+    /* animation: pulse 2s infinite; */ /* Remover animação */
 }
 
-@keyframes pulse {
+/* @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
-}
+} */
 
 /* Benefícios Section */
 .beneficios {
@@ -85,7 +81,7 @@
 /* Resultados Section */
 .resultados {
     padding: var(--spacing-xl) 0;
-    background-color: var(--secondary-color);
+    background-color: var(--background-soft); /* Cor de fundo de style.css */
 }
 
 .resultados-grid {
@@ -180,7 +176,7 @@
     content: "✓";
     position: absolute;
     left: 0;
-    color: var(--secondary-color);
+    color: var(--primary-color); /* Cor do ícone da lista */
     font-weight: bold;
 }
 
@@ -232,7 +228,7 @@
 /* FAQ Section */
 .faq {
     padding: var(--spacing-xl) 0;
-    background-color: var(--secondary-color);
+    background-color: var(--background-soft); /* Cor de fundo de style.css */
 }
 
 .faq-grid {
@@ -256,9 +252,9 @@
 
 /* Media Queries */
 @media (min-width: 768px) {
-    .hero-vendas h1 {
+    /* .hero-vendas h1 {
         font-size: 3rem;
-    }
+    } */
 
     .beneficios-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -277,7 +273,7 @@
     }
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
     .hero-vendas h1 {
         font-size: 3.5rem;
     }
@@ -285,4 +281,4 @@
     .subtitle {
         font-size: 1.5rem;
     }
-}
+} */
